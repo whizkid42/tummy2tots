@@ -2,6 +2,9 @@
    CONFIG
 ========================= */
 const WHATSAPP_NUMBER = "919901753839";
+const LOCATION_BANGALORE = "bangalore";
+const LOCATION_OUTSTATION = "outstation";
+
 
 /* =========================
    STATE
@@ -105,8 +108,17 @@ const gowns = [
    LOCATION LOGIC
 ========================= */
 function setLocation(loc) {
+  if (loc !== LOCATION_BANGALORE && loc !== LOCATION_OUTSTATION) {
+    console.error("Invalid location:", loc);
+    return;
+  }
+
   userLocation = loc;
+
+  // Close modal
   document.getElementById("locationModal").style.display = "none";
+
+  // Re-render gowns with new prices
   renderGowns();
 }
 
@@ -122,10 +134,16 @@ function renderGowns() {
   grid.innerHTML = "";
 
   gowns.forEach(gown => {
-    const price =
-      userLocation === "Bangalore"
-        ? gown.rentBangalore
-        : gown.rentOutstation;
+    let price;
+
+    if (userLocation === LOCATION_BANGALORE) {
+      price = gown.rentBangalore;
+    } else if (userLocation === LOCATION_OUTSTATION) {
+      price = gown.rentOutstation;
+    } else {
+      price = gown.rentBangalore; // safe default
+    }
+
 
     const card = document.createElement("div");
     card.className = "gown-card";
