@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>tummy2tots | Maternity Gowns</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- LOCATION SELECTION MODAL -->
+  <div id="locationModal" class="modal-overlay">
+    <div class="modal">
+      <h2>Where do you want to rent or buy from?</h2>
+      <div class="modal-actions">
+        <button onclick="setLocation('bangalore')">Bangalore</button>
+        <button onclick="setLocation('outstation')">Outside Bangalore</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="brand">
+      <img src="logo.jpg" alt="tummy2tots logo">
+      <span>tummy2tots</span>
+    </div>
+
+    <button id="changeLocationBtn" onclick="openLocationModal()">
+      Change Location
+    </button>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Elegant Maternity Gowns for Your Special Photoshoot</h1>
+    <p>Rent or buy premium maternity gowns in Bangalore & across India</p>
+  </section>
+
+  <!-- GOWN CATALOG -->
+  <main>
+    <div id="gownGrid" class="gown-grid"></div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <h3>Contact tummy2tots</h3>
+    <p>
+      📍 no-5, 2nd floor, Kalpvruksh Apartment,<br>
+      Upper Pipeline Rd, Kumara Park West,<br>
+      Bengaluru, Karnataka 560020
+    </p>
+
+    <p>
+      📞 <a href="https://wa.me/919901753839" target="_blank">+91 99017 53839</a>
+    </p>
+
+    <p>
+      📸 <a href="https://www.instagram.com/tummy2tots" target="_blank">Instagram</a> |
+      📘 <a href="https://www.facebook.com/profile.php?id=100087554239582" target="_blank">Facebook</a>
+    </p>
+
+    <small>© tummy2tots</small>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- CONFIRMATION MODAL -->
+<div id="confirmModal" class="modal-overlay" style="display:none;">
+  <div class="modal">
+    <h3 id="confirmTitle"></h3>
+    <p id="confirmText"></p>
+    <div class="modal-actions">
+      <button onclick="confirmAction()">Yes</button>
+      <button onclick="closeConfirmModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- IMAGE GALLERY MODAL -->
+<div id="galleryModal" class="modal-overlay" style="display:none;">
+  <div class="modal gallery-modal">
+    <h3 id="galleryTitle"></h3>
+
+    <img id="galleryImage" src="" alt="Gown image">
+
+    <div class="gallery-controls">
+      <button onclick="prevImage()">‹</button>
+      <span id="imageCounter"></span>
+      <button onclick="nextImage()">›</button>
+    </div>
+
+    <button class="close-btn" onclick="closeGallery()">Close</button>
+  </div>
+</div>
+
+</body>
+</html>
