@@ -190,3 +190,41 @@ footer {
   cursor: pointer;
 }
 
+/* TERMS MODAL */
+.terms-modal {
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  text-align: left;
+}
+
+.terms-modal h3 {
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.terms-location {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 16px;
+  opacity: 0.8;
+}
+
+.terms-content ul {
+  padding-left: 18px;
+}
+
+.terms-content li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.terms-highlight {
+  background: #fff0ec;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 12px 0;
+  font-weight: 500;
+}
+
