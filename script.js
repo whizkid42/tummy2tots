@@ -389,17 +389,22 @@ function showRentalWarningThenProceed() {
   warning.innerHTML = `
     <div class="modal">
       <p>Please read the rental terms at the bottom of the website.</p>
+      <button id="continueToWhatsApp" class="rent">
+         Continue to WhatsApp
+      </button>
     </div>
   `;
 
   document.body.appendChild(warning);
-  
 
-  setTimeout(() => {
-    document.body.removeChild(warning);
-    sendRentMessage(gownName);
-  }, 2000);
+   document
+      .getElementById("continueToWhatsApp")
+      .addEventListener("click",() => {
+         document.body.removeChild(warning);
+         sendRentMessage(gownName);
+      });
 }
+  
 
 
 function openGallery(images, title) {
@@ -453,3 +458,4 @@ function openTermsModal() {
 function closeTermsModal() {
   document.getElementById("termsModal").style.display = "none";
 }
+
